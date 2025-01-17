@@ -81,9 +81,3 @@ composer run dev
 - resources/views - Berisi file view untuk frontend dan backend.
 - routes/web.php - Definisi rute untuk aplikasi web.
 
-- dokter: Akses terbatas pada jadwal pribadi, data pasien yang terkait, dan catatan medis.
-- pasien: Dapat mengakses fitur pendaftaran dan melihat riwayat pribadi.
-
-## Akun Default Admin
-- No HP 082136676464 Password 12345678
-- Semua akun admin, dokter, dan pasien memiliki password default: 12345678
