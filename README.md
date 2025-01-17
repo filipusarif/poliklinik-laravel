@@ -1,13 +1,5 @@
-# Udinus Hospital
-
-Udinus-Hospital adalah aplikasi manajemen klinik yang dirancang untuk mempermudah pengelolaan data pasien, jadwal dokter, serta administrasi klinik secara efisien. Aplikasi ini dibangun menggunakan Laravel dengan antarmuka yang ramah pengguna.
-
-## Fitur
-
-- Manajemen Pasien: Kelola data pasien, riwayat periksa, dan rekam medis.
-- Jadwal Dokter: Atur jadwal praktik dokter secara dinamis
-- Pendaftaran Online: Pemesanan slot konsultasi secara daring
-- Role-Based Access Control: Akses berbeda untuk admin, dokter, dan pasien.
+## SehatPol
+Website Poliklinik 
 
 ## Persyaratan
 - PHP 8.2^
@@ -25,7 +17,7 @@ git clone https://github.com/Kharafi03/Udinus-Hospital.git
 ```
 
 ```
-cd Udinus-Hospital
+cd poliklinik-laravel
 ```
 
 2. Masuk Ke Visual Studio Code
