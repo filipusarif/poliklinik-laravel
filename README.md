@@ -13,7 +13,7 @@ Website Poliklinik
 1. Clone repositori ini ke dalam komputer lokal Anda:
 
 ```
-git clone https://github.com/Kharafi03/Udinus-Hospital.git
+git clone https://github.com/filipusarif/poliklinik-laravel.git
 ```
 
 ```
@@ -50,12 +50,12 @@ php artisan key:generate
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=udinus_hospital
-DB_USERNAME=user_database
-DB_PASSWORD=password_database
+DB_DATABASE=poli
+DB_USERNAME=root
+DB_PASSWORD=
 ```
 
-7. Buat database baru dengan nama ``udinus_hospital`` di PhpMyAdmin.
+7. Buat database baru dengan nama ``poliklinik-laravel`` di PhpMyAdmin.
 
 8. Jalankan migrasi dan seeder untuk membuat tabel dan data awal:
 
@@ -81,8 +81,6 @@ composer run dev
 - resources/views - Berisi file view untuk frontend dan backend.
 - routes/web.php - Definisi rute untuk aplikasi web.
 
-## Konfigurasi Pengguna dan Peran
-- admin: Bertanggung jawab untuk pengelolaan operasional klinik.
 - dokter: Akses terbatas pada jadwal pribadi, data pasien yang terkait, dan catatan medis.
 - pasien: Dapat mengakses fitur pendaftaran dan melihat riwayat pribadi.
 
