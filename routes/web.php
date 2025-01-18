@@ -23,8 +23,8 @@ use App\Http\Controllers\Dokter\ProfilController as DokterProfilController;
 use App\Http\Controllers\Pasien\DashboardController as PasienDashboardController;
 use App\Http\Controllers\Pasien\ProfilController as PasienProfilController;
 use App\Http\Controllers\Pasien\RiwayatController as PasienRiwayatController;
-
-
+use App\Http\Controllers\PasienKonsultasiController;
+use App\Http\Controllers\DokterKonsultasiController;
 use App\Http\Controllers\RegistrasiController;
 use App\Models\Pasien;
 
@@ -133,6 +133,12 @@ Route::middleware(['auth:dokter'])->group(function () {
     Route::get('/dokter/profil', [DokterProfilController::class, 'index'])->name('dokter.profil.index');
     Route::post('/dokter/profil', [DokterProfilController::class, 'editProfil'])->name('dokter.profil.update');
     Route::post('/dokter/password', [DokterProfilController::class, 'editPassword'])->name('dokter.password.update');
+
+
+    // Konsultasi
+    Route::get('/dokter/konsultasi', [DokterKonsultasiController::class, 'index'])->name('dokter.konsultasi.index');
+    Route::get('/dokter/konslutasi/edit/{id}', [DokterKonsultasiController::class, 'edit'])->name('dokter.konsultasi.edit');
+    Route::put('/dokter/konslutasi/{pasien}', [DokterKonsultasiController::class, 'update'])->name('dokter.konsultasi.update');
 });
 
 // Grup Middleware untuk Pasien
@@ -153,4 +159,13 @@ Route::middleware(['auth:pasien'])->group(function () {
     Route::get('/pasien/get-jadwal/{poliId}', [PasienRiwayatController::class, 'getJadwal'])->name('pasien.get-jadwal');
     Route::post('/pasien/daftar-poli', [PasienRiwayatController::class, 'daftarPoli'])->name('pasien.daftar_poli');
     Route::get('/pasien/riwayat/detail/{id}', [PasienRiwayatController::class, 'detail'])->name('pasien.riwayat.detail');
+    
+    // Konsultasi
+    Route::get('/pasien/konsultasi', [PasienKonsultasiController::class, 'index'])->name('pasien.konsultasi.index');
+    Route::get('/pasies/konslutasi/create', [PasienKonsultasiController::class, 'create'])->name('pasien.konsultasi.create');
+    Route::post('/pasies/konslutasi/store', [PasienKonsultasiController::class, 'store'])->name('pasien.konsultasi.store');
+    Route::get('/pasies/konslutasi/edit/{id}', [PasienKonsultasiController::class, 'edit'])->name('pasien.konsultasi.edit');
+    Route::put('/pasies/konslutasi/{pasien}', [PasienKonsultasiController::class, 'update'])->name('pasien.konsultasi.update');
+    Route::delete('/pasies/konslutasi/{pasien}', [PasienKonsultasiController::class, 'destroy'])->name('pasien.konsultasi.destroy');
+
 });

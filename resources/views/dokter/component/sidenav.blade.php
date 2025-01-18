@@ -27,6 +27,12 @@
                     <span class="nav-link-text ms-1">Riwayat Pasien</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Route::is('dokter.konsultasi.*') ? 'active' : '' }}" href="{{ route('dokter.konsultasi.index') }}">
+                    <i class="fa-solid fa-users {{ Route::is('dokter.konsultasi.*') ? 'text-white' : 'text-dark' }} text-lg opacity-10 ms-1"></i>
+                    <span class="nav-link-text ms-1">Konsultasi Pasien</span>
+                </a>
+            </li>
         </ul>
     </div>
     <div class="sidenav-footer mt-1">

@@ -86,20 +86,24 @@
                                                                         </td>
                                                                         <td class="text-center">
                                                                             <div class="d-flex justify-content-center">
-                                                                                <form action="{{ route('dokter.jadwal_praktik.activate', $jadwal->id) }}" method="POST" class="confirm-update-jadwal">
+                                                                                {{-- <form action="{{ route('dokter.jadwal_praktik.activate', $jadwal->id) }}" method="POST" class="confirm-update-jadwal">
                                                                                     @csrf
                                                                                     @method('PATCH')
                                                                                     <button class="btn btn-success btn-sm mx-1" type="submit">
                                                                                         <i class="fa-solid fa-check"></i>
                                                                                     </button>
-                                                                                </form>                                                                                
+                                                                                </form>                                                                                 --}}
+                                                                                @if ($jadwal->is_active)
                                                                                 <form action="{{ route('dokter.jadwal_praktik.deactivate', $jadwal->id) }}" method="POST" class="confirm-update-jadwal">
                                                                                     @csrf
                                                                                     @method('PATCH')
                                                                                     <button class="btn btn-danger btn-sm mx-1" type="submit">
                                                                                         <i class="fa-solid fa-times"></i>
                                                                                     </button>
-                                                                                </form>                                                                                
+                                                                                </form>
+                                                                                @else
+                                                                                    <p>Deleted</p>
+                                                                                @endif                                                                                
                                                                             </div>
                                                                         </td>
                                                                         <td>

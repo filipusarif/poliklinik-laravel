@@ -59,6 +59,7 @@ class JadwalPraktikController extends Controller
 
         // Cek apakah waktu bertabrakan
         $existingSchedule = JadwalPraktik::where('id_dokter', $dokter->id)
+            ->where('is_active',1)
             ->where('hari', $request->hari)
             ->where(function ($query) use ($request) {
                 $query->whereBetween('jam_mulai', [$request->jam_mulai, $request->jam_selesai])
@@ -68,6 +69,16 @@ class JadwalPraktikController extends Controller
                             ->where('jam_selesai', '>=', $request->jam_selesai);
                     });
             })->exists();
+        // $existingSchedule = JadwalPraktik::where('id_dokter', $dokter->id)
+        //     ->where('hari', $request->hari)
+        //     ->where(function ($query) use ($request) {
+        //         $query->whereBetween('jam_mulai', [$request->jam_mulai, $request->jam_selesai])
+        //             ->orWhereBetween('jam_selesai', [$request->jam_mulai, $request->jam_selesai])
+        //             ->orWhere(function ($query) use ($request) {
+        //                 $query->where('jam_mulai', '<=', $request->jam_mulai)
+        //                     ->where('jam_selesai', '>=', $request->jam_selesai);
+        //             });
+        //     })->exists();
 
         if ($existingSchedule) {
             return redirect()->back()->with([

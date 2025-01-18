@@ -29,6 +29,9 @@
                     <li class="nav-item me-5">
                         <a class="nav-link" href="{{ route('poli') }}">Poli</a>
                     </li>
+                    <li class="nav-item me-5">
+                        <a class="nav-link" href="{{ route('pasien.konsultasi.index') }}">Konsultasi</a>
+                    </li>
                     
                     @php
                         $authUser = getAuthenticatedUser();
